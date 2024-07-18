@@ -1,0 +1,27 @@
+{
+    "name": "Amazon Web Services",
+    "estb": 2006,
+    "services": [
+        {
+            "IaaS": [
+                "EC2",
+                {
+                    "ELB": [
+                        "NLB",
+                        "ALB",
+                        "CLB",
+                        "GLB"
+                    ]
+                },
+                "RDS"
+            ]
+        },
+        "PaaS",
+        {
+            "SaaS": [
+                "ABC",
+                "XYZ"
+            ]
+        }
+    ]
+}

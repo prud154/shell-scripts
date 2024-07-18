@@ -1,0 +1,49 @@
+port used by process:
+netstat -tulpn
+ls -l /proc/<pid>/exe
+netstat -tulpn | grep :80
+lsof -u ubuntu #Open files by user
+lsof -p 522 #Open files by process
+
+
+Process pid, cmd, mem & cpu in desending order:
+ps -eo pid,cmd,%mem,%cpu --sort=-%mem | head
+
+
+Top command desnting order:
+top -b -o +%MEM | head -n 22
+
+
+How to Find Biggest Files and Directories in Linux
+du -a /home | sort -n -r | head -n 5
+du -ah /home/ubuntu/ /home/adminuser1/ | sort -n -r | head -n 5
+
+To exclude the source folders from the list:
+du -ah /home/ubuntu/ /home/adminuser1/ | sort -n -r | wc -l
+du -ah /home/ubuntu/ /home/adminuser1/ | sort -n -r | wc -l | tail -25
+
+
+Total space usd by multiple folders:
+du -sh --total /home/ubuntu /home/adminuser1
+
+
+Convert whitespaces to comma:
+sed -i  's/\s\+/,/g' data.txt
+
+#!/bin/bash
+while IFS="," read -r megastar superstar rebelstar
+do
+ echo "Displaying Record-$megastar"
+ echo "Quantity: $superstar"
+ echo "Price: $rebelstar"
+ echo "--------------------------"
+done < data
+
+
+cat data | grep -E ^[B]
+cat data | grep -E ^[B][a-eA-E]
+cat data | grep -E ^[B][a-e][c-n]
+
+cat data | egrep ^[B]
+cat data | grep '\.ca$'
+
